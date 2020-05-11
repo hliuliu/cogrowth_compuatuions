@@ -1,4 +1,4 @@
-# cogrowth_compuatuions
+# cogrowth_computations
 ## Notebooks documenting compuations of the cogrowth series of various groups
 
 ### Computations done so far.
