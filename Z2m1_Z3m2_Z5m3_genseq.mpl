@@ -29,7 +29,7 @@ orig_syst_code := convert(syst, string):
 
 #######################
 
-m1, m2, m3 := 1, 2, 2;
+m1, m2, m3 :=3, 1, 1;
 
 syst := parse(orig_syst_code):
 outfile := get_output_file(m1, m2, m3):
@@ -54,7 +54,7 @@ cg_seq_file := cat("cogrowth_seqs/", get_cogrowth_seqname(m1, m2, m3), ".mpl"):
 cur[0] := [seq(v[0] = 0, v = varlist)]:
 Fiter[0] := table(cur[0])[v0[0]]:
 Fterms := terms(Fiter[0]):
-printf("________\n"):
+#printf("________\n"):
 if Exists(cg_seq_file) then
     read cg_seq_file;
     Ftcoeffs := seq(map(parse, [Ftcoeffs]));
@@ -62,7 +62,7 @@ end if:
 if Ftcoeffs = 'Ftcoeffs' then
     Ftcoeffs := 1;
 end if:
-for k from 0 to 1000 do
+for k from 0 to 2000 do
     #printf("Iteration %d - ", k + 1);
     cur[k + 1] := expand(subs(cur[k], subs(j = k, indexed_syst)));
     Fiter[k + 1] := table(cur[k + 1])[v0[k + 1]];
