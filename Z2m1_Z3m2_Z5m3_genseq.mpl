@@ -29,7 +29,7 @@ orig_syst_code := convert(syst, string):
 
 #######################
 
-m1, m2, m3 :=3, 1, 1;
+m1, m2, m3 :=3,2,0;
 
 syst := parse(orig_syst_code):
 outfile := get_output_file(m1, m2, m3):
@@ -62,7 +62,7 @@ end if:
 if Ftcoeffs = 'Ftcoeffs' then
     Ftcoeffs := 1;
 end if:
-for k from 0 to 2000 do
+for k from 0 to 3000 do
     #printf("Iteration %d - ", k + 1);
     cur[k + 1] := expand(subs(cur[k], subs(j = k, indexed_syst)));
     Fiter[k + 1] := table(cur[k + 1])[v0[k + 1]];
